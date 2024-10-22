@@ -21,7 +21,7 @@ resource "azurerm_network_security_rule" "nsg-rule-1" {
   source_address_prefix       = "*"
   destination_address_prefix  = "*"
   resource_group_name         = azurerm_resource_group.azb45-rg.name
-  network_security_group_name = azurerm_network_security_group.azurerm_network_security_group.name
+  network_security_group_name = azurerm_network_security_group.nsg.name
 }
 resource "azurerm_network_security_rule" "nsg-rule-2" {
   name                        = "open-http"
@@ -34,7 +34,7 @@ resource "azurerm_network_security_rule" "nsg-rule-2" {
   source_address_prefix       = "*"
   destination_address_prefix  = "*"
   resource_group_name         = azurerm_resource_group.azb45-rg.name
-  network_security_group_name = azurerm_network_security_group.azurerm_network_security_group.name
+  network_security_group_name = azurerm_network_security_group.nsg.name
 }
 resource "azurerm_network_security_rule" "nsg-rule-3" {
   name                        = "open-sql"
@@ -47,7 +47,7 @@ resource "azurerm_network_security_rule" "nsg-rule-3" {
   source_address_prefix       = "*"
   destination_address_prefix  = "*"
   resource_group_name         = azurerm_resource_group.azb45-rg.name
-  network_security_group_name = azurerm_network_security_group.azurerm_network_security_group.name
+  network_security_group_name = azurerm_network_security_group.nsg.name
 }
 
 resource "azurerm_subnet_network_security_group_association" "sub-aso-1" {

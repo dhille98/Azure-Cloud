@@ -9,7 +9,7 @@ resource "azurerm_resource_group" "azb45-rg-2" {
 }
 
 resource "azurerm_resource_group" "azb45-rg-3" {
-  name     = "azb45-rg2"
+  name     = "azb45-rg3"
   location = "westus"
 }
 

@@ -23,7 +23,7 @@ resource "azurerm_network_security_rule" "nsg-rule-1" {
   resource_group_name         = azurerm_resource_group.azb45-rg.name
   network_security_group_name = azurerm_network_security_group.azurerm_network_security_group.name
 }
-resource "azurerm_network_security_rule" "nsg-rule-1" {
+resource "azurerm_network_security_rule" "nsg-rule-2" {
   name                        = "open-http"
   priority                    = 120
   direction                   = "Inbound"

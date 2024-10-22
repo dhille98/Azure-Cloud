@@ -10,7 +10,7 @@ __terraform workflow__
 ---
 other commands :
     - terraform plan --refresh-only
-    - terraform destory
+    - terraform destroy
     - terraform state list
     - 
 

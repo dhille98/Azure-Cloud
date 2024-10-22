@@ -11,6 +11,8 @@ __terraform workflow__
 other commands :
     - terraform plan --refresh-only
     - terraform destory
+    - terraform state list
+    - 
 
 ### Bash
 

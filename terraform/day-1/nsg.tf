@@ -12,7 +12,7 @@ resource "azurerm_network_security_group" "nsg" {
 
 resource "azurerm_network_security_rule" "nsg-rule-1" {
   name                        = "open-ssh"
-  priority                    = 110
+  priority                    = 210
   direction                   = "Inbound"
   access                      = "Allow"
   protocol                    = "Tcp"
@@ -22,10 +22,14 @@ resource "azurerm_network_security_rule" "nsg-rule-1" {
   destination_address_prefix  = "*"
   resource_group_name         = azurerm_resource_group.azb45-rg.name
   network_security_group_name = azurerm_network_security_group.nsg.name
+
+  lifecycle {
+    create_before_destroy = true
+  }
 }
 resource "azurerm_network_security_rule" "nsg-rule-2" {
   name                        = "open-http"
-  priority                    = 120
+  priority                    = 220
   direction                   = "Inbound"
   access                      = "Allow"
   protocol                    = "Tcp"
@@ -35,10 +39,13 @@ resource "azurerm_network_security_rule" "nsg-rule-2" {
   destination_address_prefix  = "*"
   resource_group_name         = azurerm_resource_group.azb45-rg.name
   network_security_group_name = azurerm_network_security_group.nsg.name
+  lifecycle {
+    create_before_destroy = true
+  }
 }
 resource "azurerm_network_security_rule" "nsg-rule-3" {
   name                        = "open-sql"
-  priority                    = 130
+  priority                    = 230
   direction                   = "Inbound"
   access                      = "Allow"
   protocol                    = "Tcp"
@@ -48,6 +55,9 @@ resource "azurerm_network_security_rule" "nsg-rule-3" {
   destination_address_prefix  = "*"
   resource_group_name         = azurerm_resource_group.azb45-rg.name
   network_security_group_name = azurerm_network_security_group.nsg.name
+  lifecycle {
+    create_before_destroy = true
+  }
 }
 
 resource "azurerm_subnet_network_security_group_association" "sub-aso-1" {

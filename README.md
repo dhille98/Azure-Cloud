@@ -28,3 +28,7 @@ $env:ARM_SUBSCRIPTION_ID="<azure_subscription_id>"
 $env:ARM_TENANT_ID="<azure_subscription_tenant_id>"
 $env:ARM_CLIENT_SECRET="<service_principal_password>"
 ```
+
+### terraform life cycle hooks
+
+create-before-destroy = 'false' this is default nather

@@ -24,7 +24,7 @@ resource "azurerm_network_security_rule" "nsg-rule-1" {
   network_security_group_name = azurerm_network_security_group.nsg.name
 
   lifecycle {
-    create_before_destroy = true
+    create_before_destroy = false
   }
 }
 resource "azurerm_network_security_rule" "nsg-rule-2" {
@@ -40,7 +40,7 @@ resource "azurerm_network_security_rule" "nsg-rule-2" {
   resource_group_name         = azurerm_resource_group.azb45-rg.name
   network_security_group_name = azurerm_network_security_group.nsg.name
   lifecycle {
-    create_before_destroy = true
+    create_before_destroy = false
   }
 }
 resource "azurerm_network_security_rule" "nsg-rule-3" {
@@ -56,7 +56,7 @@ resource "azurerm_network_security_rule" "nsg-rule-3" {
   resource_group_name         = azurerm_resource_group.azb45-rg.name
   network_security_group_name = azurerm_network_security_group.nsg.name
   lifecycle {
-    create_before_destroy = true
+    create_before_destroy = false
   }
 }
 

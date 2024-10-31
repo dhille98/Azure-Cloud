@@ -41,3 +41,7 @@ nsg_rules = [
     destination_address_prefix = "*"
   }
 ]
+vm_name = "azb45-rg-vm"
+vm_size = "Standard_B1s"
+admin_username      = "adminsree"
+admin_password      = "India@123456"

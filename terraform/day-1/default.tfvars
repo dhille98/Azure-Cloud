@@ -1,11 +1,11 @@
 
 resource_group_name = "azb45-rg"
-location = "westus"
-vnet_name = "azb45-rg-vnet"
-vnet_address_space = [ "10.0.0.0/16" ]
-subnet_names = [ "subnet-1", "subnet-2" ]
-subnet_prefixes = [ "10.0.1.0/24", "10.0.2.0/24" ]
-nsg_name = "azb45-rg-nsg"
+location            = "westus"
+vnet_name           = "azb45-rg-vnet"
+vnet_address_space  = ["10.0.0.0/16"]
+subnet_names        = ["subnet-1", "subnet-2"]
+subnet_prefixes     = ["10.0.1.0/24", "10.0.2.0/24"]
+nsg_name            = "azb45-rg-nsg"
 nsg_rules = [
   {
     name                       = "AllowSSH"
@@ -41,7 +41,7 @@ nsg_rules = [
     destination_address_prefix = "*"
   }
 ]
-vm_name = "azb45-rg-vm"
-vm_size = "Standard_B1s"
-admin_username      = "adminsree"
-admin_password      = "India@123456"
+vm_name        = "azb45-rg-vm"
+vm_size        = "Standard_B1s"
+admin_username = "adminsree"
+admin_password = "India@123456"

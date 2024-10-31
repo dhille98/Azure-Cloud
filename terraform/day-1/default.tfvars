@@ -1,11 +1,12 @@
-reresource_group_name = "azb45-rg"
-location              = "West Us"
-vnet_name             = "azb45-rg-vnet"
-vnet_address_space    = ["10.0.0.0/16"]
-subnet_names          = ["azb45-rg-subnet-1", "azb45-rg-subnet-2"]
-subnet_prefixes       = ["10.0.1.0/24", "10.0.2.0/24"]
+resource_group_name = "Azb45-rg"
+location            = "West US"
+vnet_name           = "myVnet"
+subnet_name         = "mySubnet"
+address_space       = ["10.0.0.0/16"]
+subnet_prefix       = "10.0.1.0/24"
+nsg_name            = "myNSG"
 
-nsg_name = "myNSG"
+
 nsg_rules = [
   {
     name                       = "AllowSSH"

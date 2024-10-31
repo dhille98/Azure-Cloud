@@ -1,7 +1,7 @@
 # Create a resource group
 
-resource "azurerm_resource_group" "azb45-rg" {
-  name     = "azb45-rg"
-  location = "westus"
+resource "azurerm_resource_group" "rg" {
+  name     = var.resource_group_name
+  location = var.location
 }
 

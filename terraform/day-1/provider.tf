@@ -11,7 +11,5 @@ provider "azurerm" {
   # Configuration options
   alias           = "Free_Trial"
   subscription_id = "b59b4f26-580b-4477-b69c-40a4ac038382"
-  features {
-
- }
+  features {}
 }

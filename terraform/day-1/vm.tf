@@ -1,3 +1,11 @@
+
+# Create public IPs
+resource "azurerm_public_ip" "testvm_pip1" {
+  name                = "testvm-pip1"
+  location            = azurerm_resource_group.rg.location
+  resource_group_name = azurerm_resource_group.rg.name
+  allocation_method   = "Dynamic"
+}
 # Network Interface
 resource "azurerm_network_interface" "nic" {
   name                = "${var.vm_name}-nic"
@@ -8,6 +16,7 @@ resource "azurerm_network_interface" "nic" {
     name                          = "internal"
     subnet_id                     = azurerm_subnet.subnet[0].id
     private_ip_address_allocation = "Dynamic"
+    public_ip_address_id          = azurerm_public_ip.testvm_pip1.id
   }
 }
 
@@ -32,8 +41,8 @@ resource "azurerm_linux_virtual_machine" "vm" {
 
   source_image_reference {
     publisher = "Canonical"
-    offer     = "UbuntuServer"
-    sku       = "22.04-LTS"
+    offer     = "0001-com-ubuntu-server-jammy"
+    sku       = "22_04-lts-gen2"
     version   = "latest"
   }
 

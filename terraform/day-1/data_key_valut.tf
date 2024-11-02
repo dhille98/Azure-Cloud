@@ -8,7 +8,7 @@ output "vault_id" {
 }
 
 data "azurerm_key_vault_secret" "testvm1" {
-  name         = "secret-sauce"
+  name         = "testvm1-password"
   key_vault_id = data.azurerm_key_vault.azb45_keyvault.id
 }
 

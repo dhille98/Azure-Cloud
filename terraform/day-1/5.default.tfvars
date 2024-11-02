@@ -2,7 +2,10 @@
 resource_group_name = "azb45-rg"
 location            = "westus"
 vnet_name           = "azb45-rg-vnet"
+vnet2_name           = "azb45-rg-vnet2"
+environment = "Dev"
 vnet_address_space  = ["10.0.0.0/16"]
+vnet2_address_space  = ["192.168.0.0/16"]
 subnet_names        = ["subnet-1", "subnet-2"]
 subnet_prefixes     = ["10.0.1.0/24", "10.0.2.0/24"]
 nsg_name            = "azb45-rg-nsg"

@@ -62,3 +62,16 @@ variable "admin_username" {
   type        = string
 }
 
+variable "environment" {
+  description = "add the tags"
+  type = string
+  
+}
+
+variable "vnet2_name" {
+  
+}
+variable "vnet2_address_space" {
+  type = list(string)
+  
+}

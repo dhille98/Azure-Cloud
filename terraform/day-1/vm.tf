@@ -29,7 +29,7 @@ resource "azurerm_linux_virtual_machine" "vm" {
   resource_group_name = azurerm_resource_group.rg.name
   size                = var.vm_size
   admin_username      = var.admin_username
-  admin_password      = var.admin_password
+  admin_password      = data.azurerm_key_vault_secret.testvm1.value
   network_interface_ids = [
     azurerm_network_interface.nic.id
   ]

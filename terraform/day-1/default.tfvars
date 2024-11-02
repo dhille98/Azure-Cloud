@@ -44,4 +44,3 @@ nsg_rules = [
 vm_name        = "azb45-rg-vm"
 vm_size        = "Standard_D2s_v3"
 admin_username = "adminsree"
-admin_password = "India@123456"

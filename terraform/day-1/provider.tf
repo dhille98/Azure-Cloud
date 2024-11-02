@@ -2,16 +2,15 @@ terraform {
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = "4.6.0"
+      version = "~> 3.0" # or the version you need
     }
   }
+
+  required_version = ">= 0.12" # specify your Terraform version requirement
 }
 
 provider "azurerm" {
-  # Configuration options
-  alias           = "Free_Trial"
-  subscription_id = "b59b4f26-580b-4477-b69c-40a4ac038382"
-  features {
-
-  }
+  features {}
 }
+
+

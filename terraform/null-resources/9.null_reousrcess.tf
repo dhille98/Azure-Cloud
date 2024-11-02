@@ -21,6 +21,8 @@ resource "null_resource" "testvm1" {
       host     = azurerm_public_ip.testvm_pip1.ip_address
     }
   }
+  # Ensure that the null_resource waits for the public IP to be created
+  depends_on = [azurerm_public_ip.testvm_pip1]
   #This resouce will be recreated if there is a changein tag version.
   triggers = {
     public-servers-tags = azurerm_linux_virtual_machine.vm.tags.Version

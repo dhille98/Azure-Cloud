@@ -143,3 +143,53 @@ terraform functions
  
 __difference between data sources vs terraform import__
 
+
+
+###  **terraform taint**
+   - Marks a specific resource as “tainted,” forcing it to be destroyed and recreated on the next `terraform apply`. Useful when a resource is in an unhealthy or inconsistent state.
+
+   ```bash
+   terraform taint <resource_address>
+   ```
+
+###  **terraform untaint**
+   - Clears the “tainted” state on a resource, ensuring it won’t be recreated in the next apply. This is useful if you decide the resource doesn’t need to be replaced.
+
+   ```bash
+   terraform untaint <resource_address>
+   ```
+
+###  **terraform workspace**
+   - Manages multiple workspaces (environments) within a single configuration directory. Workspaces are often used to manage separate states for different environments, like `development`, `staging`, and `production`.
+
+   - **Examples**:
+     ```bash
+     terraform workspace list           # Lists all workspaces
+     terraform workspace new <name>     # Creates a new workspace
+     terraform workspace select <name>  # Switches to a specific workspace
+     ```
+###  terraform import
+Imports an existing resource into Terraform's state without actually modifying the resource itself. This is used to bring infrastructure created outside of Terraform into Terraform's management.
+```bash
+
+terraform import <resource_address> <resource_id>
+```
+### Summary of Key Commands
+| Command             | Purpose                                                                                   |
+|---------------------|-------------------------------------------------------------------------------------------|
+| `terraform init`    | Initializes configuration directory                                                       |
+| `terraform plan`    | Previews changes                                                                          |
+| `terraform apply`   | Provisions or updates resources                                                           |
+| `terraform destroy` | Removes all resources                                                                     |
+| `terraform validate`| Checks configuration validity                                                             |
+| `terraform fmt`     | Formats configuration files                                                               |
+| `terraform state`   | Manages Terraform state                                                                   |
+| `terraform output`  | Displays defined outputs                                                                  |
+| `terraform import`  | Imports external resources into Terraform                                                 |
+| `terraform refresh` | Syncs state with infrastructure                                                           |
+| `terraform taint`   | Forces resource recreation                                                                |
+| `terraform untaint` | Clears taint, retaining the resource                                                      |
+| `terraform workspace`| Manages multiple workspaces for separate environments                                    |
+
+Using these commands effectively can streamline your infrastructure management and keep configurations and deployments well-organized.
+

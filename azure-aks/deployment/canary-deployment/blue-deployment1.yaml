@@ -1,0 +1,44 @@
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-blue
+  labels:
+    app: blue-app
+    environment: v1.0
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: blue-app
+      environment: v1.0
+  template:
+    metadata:
+      labels:
+        app: blue-app
+        environment: v1.0
+    spec:
+      containers:
+      - name: my-app
+        image: longflew/ingress:BLUEPAGE
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            cpu: 100m
+            memory: 128Mi
+          limits:
+            cpu: 200m
+            memory: 256Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: blue-svc
+spec:
+  selector:
+    app: blue-app
+  ports:
+  - port: 80
+    targetPort: 80
